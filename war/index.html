@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+<head> 
+<title>SouHub</title> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" /> 
+<meta name="Keywords" content="souhub,search engine,seo,multi search,multi maps,multi books,multi images" /> 
+<meta name="Description" content="supply search results from different eninges。" /> 
+<meta name="robots" content="index, follow" /> 
+<meta name="googlebot" content="index, follow" /> 
+<style type="text/css"> 
+body{margin:0;padding:0; text-align:center; font-size:12px; font-family:Arial, Helvetica, sans-serif;}
+a:link, a:visited{color:#0000CC}
+form,img{margin:0; padding:0; border:0;}
+.wrap{width:650px; margin:auto;}
+#toolbar{padding-top:6px; padding-right:6px;text-align:right;}
+#stype{margin:30px auto 5px auto; font-size:14px; padding-left:8px;}
+#stype a,#stype b{margin:auto 8px auto auto;}
+ 
+#q{font-size:14px; margin:0; padding:6px 5px 4px 5px; border:1px solid #9DB0BC;}
+ 
+#q{width:362px; height:30px; voice-family :"\"}\"";voice-family:inherit; width:350px; height:18px;}
+#q{margin-left:auto;}
+html* #p{margin-left:123px;}
+*+html #p{margin-left:123px;*margin-left:123px;}
+* html #p{margin-left:123px;}
+ 
+#submit{font-size:14px; margin:0; padding:0; width:120px; height:30px; border:0;font-size:14px; background:url(static/btn_search.gif);}
+#submit{position:absolute; margin-left:3px;}
+html* #submit{position:relative; margin-left:auto;}
+*+html #submit{position:relative; *position:relative;}
+* html #submit{position:relative;}
+ 
+#more{margin:20px auto 20px auto; font-size:14px; padding-left:8px;}
+#more a,#more span{margin:auto 8px auto auto;}
+#event{margin:40px auto 40px auto;}
+#about{margin-bottom:10px;color:#7777CC; padding-left:4px;}
+#about a,#about span{text-decoration:none; margin:auto 4px auto auto;color:#7777CC;}
+#about a:hover{text-decoration:underline;}
+#copyright,#copyright a{ color:#999999;}
+#copyright a,#copyright span{ text-decoration:none; margin-right:5px;}
+#copyright img{margin:auto -2px -3px -2px;}
+ 
+.ac_results{border:1px solid #9DB0BC;border-top:0;background-color: white;padding: 0;margin: 0;list-style: none;position: absolute;z-index: 10000;display: none;overflow:hidden;}
+.ac_results li{padding: 2px 5px;white-space: nowrap;color: #101010;text-align: left;padding:6px 5px 4px 5px;}
+.ac_over {cursor: pointer;background-color: #e0e8ed;}
+.ac_match{text-decoration: underline; color: black;}
+</style> 
+<script type="text/javascript" src="static/jquery.min.js"></script> 
+<script type="text/javascript" src="static/jquery.suggest.js"></script> 
+<script type="text/javascript"> 
+$(document).ready(function(){
+$('input[name=q]:first').focus();
+$('input[name=q]:first').suggest('/', {onSelect: function(){
+$(this).parent().find('input[type=submit]').click();
+}});
+});
+ 
+function checkSuggest()
+{
+if(window.insuggest == 'undefined')
+return true;
+else
+return (!window.insuggest);
+}
+</script> 
+</head> 
+<body> 
+<div class="frame" id="toolbar"></div> 
+<div id="logo" class="wrap"><img src="static/logo.gif" width="300" height="120" alt="" /></div> 
+<form method="get" action="/search" onsubmit="return checkSuggest();"> 
+<div class="wrap" id="stype"></div> 
+<div class="wrap"> 
+<input type="text" name="q" id="q" /> 
+<input type="submit" id="submit" value="SouHub Search" /> 
+</div> 
+</form> 
+<div class="wrap" id="more"> 
+</div> 
+<div class="wrap" id="event"> 
+</div> 
+<div class="frame" id="copyright"> 
+<span>&copy; 2010 SouHub</span> 
+&nbsp;<a href="#">SiteMap</a> 
+</div> 
+<script type="text/javascript"> 
+ 
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-18737404-1']);
+  _gaq.push(['_trackPageview']);
+ 
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+ 
+</script> 
+</body> 
+</html>
